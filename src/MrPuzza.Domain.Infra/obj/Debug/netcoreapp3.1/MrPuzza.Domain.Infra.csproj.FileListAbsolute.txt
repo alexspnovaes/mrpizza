@@ -4,3 +4,12 @@ C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debu
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.AssemblyInfoInputs.cache
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.AssemblyInfo.cs
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\bin\Debug\netcoreapp3.1\MrPizza.Domain.dll
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\bin\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.runtimeconfig.json
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\bin\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.runtimeconfig.dev.json
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\bin\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.pdb
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\bin\Debug\netcoreapp3.1\MrPizza.Domain.pdb
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.csproj.CopyComplete
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.dll
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.pdb
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.genruntimeconfig.cache
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.csproj.CoreCompileInputs.cache

@@ -6,17 +6,6 @@ namespace MrPizza.Domain.Entities
 {
     public class Usuario : BaseEntity
     {
-        public Usuario(string nome, string emailLogin, string senha, string ddd, string telefone, Endereco endereco)
-        {
-            Id = Guid.NewGuid();
-            Nome = nome;
-            EmailLogin = emailLogin;
-            Senha = senha;
-            DDD = ddd;
-            Telefone = telefone;
-            Endereco = endereco;
-        }
-
         public string Nome { get; set; }
         public string EmailLogin { get; set; }
         public string Senha { get; set; }

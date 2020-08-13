@@ -7,8 +7,8 @@ namespace MrPizza.Domain.Entities
     public class PedidoPizza : BaseEntity
     {
         public Pizza Pizza { get; set; }
-        public int IdPizza { get; set; }
+        public Guid IdPizza { get; set; }
         public Pedido Pedido { get; set; }
-        public int IdPedido { get; set; }
+        public Guid IdPedido { get; set; }
     }
 }

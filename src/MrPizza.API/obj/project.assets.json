@@ -188,6 +188,22 @@
           "lib/netstandard2.0/_._": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Design/3.1.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Microsoft.EntityFrameworkCore.Relational": "3.1.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
+        },
+        "build": {
+          "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/3.1.7": {
         "type": "package",
         "dependencies": {
@@ -1554,6 +1570,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.7",
           "Microsoft.EntityFrameworkCore.Relational": "3.1.7",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.7",
           "MrPizza.Domain": "1.0.0"
         },
         "compile": {
@@ -1884,6 +1901,22 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.3.1.7.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Design/3.1.7": {
+      "sha512": "gSRNa758T3dCqg5JUvOMMfDxx1Y8oFipf6t2bMg8KDpNyzVfp2YmjUsdQHDDIjiG4X8m3jkkykQPqBS0GsJD/A==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.design/3.1.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "build/net461/Microsoft.EntityFrameworkCore.Design.props",
+        "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props",
+        "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll",
+        "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.xml",
+        "microsoft.entityframeworkcore.design.3.1.7.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/3.1.7": {
@@ -5671,6 +5704,7 @@
       "MediatR >= 8.1.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 8.1.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.7",
+      "Microsoft.EntityFrameworkCore.Design >= 3.1.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.7",
       "MrPuzza.Domain.Infra >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.5.1"
@@ -5735,6 +5769,12 @@
             "version": "[8.1.0, )"
           },
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+            "target": "Package",
+            "version": "[3.1.7, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[3.1.7, )"
           },

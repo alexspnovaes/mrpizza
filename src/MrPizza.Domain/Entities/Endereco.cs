@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MrPizza.Domain.Entities
 {
-    public class Endereco
+    public class Endereco : BaseEntity
     {
         public Endereco(string rua, string numero, string complemento, string bairro, string cEP, string cidade, string estado)
         {

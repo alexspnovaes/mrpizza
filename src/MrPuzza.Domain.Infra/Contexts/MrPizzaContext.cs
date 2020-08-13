@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MrPizza.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 
 namespace MrPuzza.Domain.Infra.Contexts
 {
@@ -29,10 +25,21 @@ namespace MrPuzza.Domain.Infra.Contexts
                 .WithMany(p => p.PedidosPizzas)
                 .HasForeignKey(pp => pp.IdPedido);
 
+            modelBuilder.Entity<PizzaSabor>().HasKey(ps => ps.Id).HasName("PK_pizzaSaborId");
+            modelBuilder.Entity<PizzaSabor>()
+                .HasOne(ps => ps.Pizza)
+                .WithMany(p => p.PizzaSabores)
+                .HasForeignKey(ps => ps.IdPizza);
+            modelBuilder.Entity<PizzaSabor>()
+                .HasOne(ps => ps.Sabor)
+                .WithMany(p => p.PizzaSabores)
+                .HasForeignKey(ps => ps.IdPizza);
 
             modelBuilder.Entity<Pedido>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_pedidoId");
+                entity.Property(e => e.IdEndereco);
+                entity.Property(e => e.IdUsuario);
             });
 
             modelBuilder.Entity<Usuario>(entity =>
@@ -49,8 +56,25 @@ namespace MrPuzza.Domain.Infra.Contexts
             modelBuilder.Entity<Pizza>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_pizzaId");
-                entity.Property(e => e.Nome).IsRequired().HasColumnType("varchar(100)");
-                entity.Property(e => e.Descricao).IsRequired().HasColumnType("varchar(500)");
+                entity.Property(e => e.Valor).IsRequired().HasColumnType("decimal(8,2)");
+            });
+
+            modelBuilder.Entity<Endereco>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK_enderecoId");
+                entity.Property(e => e.Bairro).IsRequired().HasColumnType("varchar(100)");
+                entity.Property(e => e.CEP).IsRequired().HasColumnType("varchar(8)");
+                entity.Property(e => e.Complemento).HasColumnType("varchar(20)");
+                entity.Property(e => e.Cidade).IsRequired().HasColumnType("varchar(50)");
+                entity.Property(e => e.Numero).IsRequired().HasColumnType("varchar(10)");
+                entity.Property(e => e.Rua).HasColumnName("endereco").IsRequired().HasColumnType("varchar(80)");
+                entity.Property(e => e.Estado).IsRequired().HasColumnType("varchar(2)");
+            });
+
+            modelBuilder.Entity<Sabor>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK_saborId");
+                entity.Property(e => e.Descricao).IsRequired().HasColumnType("varchar(100)");
                 entity.Property(e => e.Valor).IsRequired().HasColumnType("decimal(8,2)");
             });
         }
