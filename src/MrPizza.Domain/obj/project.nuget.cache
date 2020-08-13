@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "xn9lAl3xJRC+gq5MLRPKEZcrdkpGvpu/mx6fwW/4jAARcrWWUVGvPd/iP4MP3FxkJKfr+gp8kWt0o6B/kduz2Q==",
+  "dgSpecHash": "TJjK/vC+XZBL/R97u6Cz2T5jEOgFBbjL289EXVbWveZIMdNWh6Qc9WgSwLwV8HdMRvk7kRfrh0PaXcMEeuJ+AA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPizza.Domain\\MrPizza.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alexandre.novaes\\.nuget\\packages\\fluentvalidation\\9.1.2\\fluentvalidation.9.1.2.nupkg.sha512",
+    "C:\\Users\\alexandre.novaes\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.1.2\\fluentvalidation.aspnetcore.9.1.2.nupkg.sha512",
+    "C:\\Users\\alexandre.novaes\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.1.2\\fluentvalidation.dependencyinjectionextensions.9.1.2.nupkg.sha512",
+    "C:\\Users\\alexandre.novaes\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

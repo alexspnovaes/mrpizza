@@ -1,0 +1,6 @@
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\bin\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.deps.json
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\bin\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.dll
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.csprojAssemblyReference.cache
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.AssemblyInfoInputs.cache
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\obj\Debug\netcoreapp3.1\MrPuzza.Domain.Infra.AssemblyInfo.cs
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPuzza.Domain.Infra\bin\Debug\netcoreapp3.1\MrPizza.Domain.dll
