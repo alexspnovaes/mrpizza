@@ -140,6 +140,10 @@
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[9.1.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[8.1.0, )"
             }
           },
           "imports": [

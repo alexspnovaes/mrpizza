@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="9.1.2" />
+    <PackageReference Include="MediatR" Version="8.1.0" />
   </ItemGroup>
 
 </Project>

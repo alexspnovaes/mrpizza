@@ -40,6 +40,15 @@
           "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {}
         }
       },
+      "MediatR/8.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
       "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
         "type": "package",
         "compile": {
@@ -95,6 +104,24 @@
         "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml"
       ]
     },
+    "MediatR/8.1.0": {
+      "sha512": "KJFnA0MV83bNOhvYbjIX1iDykhwFXoQu0KV7E1SVbNA/CmO2I7SAm2Baly0eS7VJ2GwlmStLajBfeiNgTpvYzQ==",
+      "type": "package",
+      "path": "mediatr/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.dll",
+        "lib/net461/MediatR.xml",
+        "lib/netstandard2.0/MediatR.dll",
+        "lib/netstandard2.0/MediatR.xml",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.8.1.0.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
     "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
       "sha512": "8/CtASu80UIoyG+r8FstrmZW5GLtXxzoYpjj3jV0FKZCL5CiFgSH3pAmqut/dC68mu7N1bU6v0UtKKL3gCUQGQ==",
       "type": "package",
@@ -111,7 +138,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "FluentValidation.AspNetCore >= 9.1.2"
+      "FluentValidation.AspNetCore >= 9.1.2",
+      "MediatR >= 8.1.0"
     ]
   },
   "packageFolders": {
@@ -159,6 +187,10 @@
           "FluentValidation.AspNetCore": {
             "target": "Package",
             "version": "[9.1.2, )"
+          },
+          "MediatR": {
+            "target": "Package",
+            "version": "[8.1.0, )"
           }
         },
         "imports": [

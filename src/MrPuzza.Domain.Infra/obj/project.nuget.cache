@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "g8bVXdAXWW4NsFRTKnbgmA348WdqYdNnWpXMssSUyAjhHnXSpJnL/NsXr0vP70pfv/M7D98U0G8Qzqidii0mFQ==",
+  "dgSpecHash": "USnA9GI6+CWOf116ezI/c3pZ0FMkFTBNINjMZOFzpjfgeh20gl0RJh4zp5DActMCoIf1GqRM4KgXTp2+3A6wrw==",
   "success": true,
   "projectFilePath": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPuzza.Domain.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexandre.novaes\\.nuget\\packages\\fluentvalidation\\9.1.2\\fluentvalidation.9.1.2.nupkg.sha512",
     "C:\\Users\\alexandre.novaes\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.1.2\\fluentvalidation.aspnetcore.9.1.2.nupkg.sha512",
     "C:\\Users\\alexandre.novaes\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.1.2\\fluentvalidation.dependencyinjectionextensions.9.1.2.nupkg.sha512",
+    "C:\\Users\\alexandre.novaes\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\alexandre.novaes\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\alexandre.novaes\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\alexandre.novaes\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

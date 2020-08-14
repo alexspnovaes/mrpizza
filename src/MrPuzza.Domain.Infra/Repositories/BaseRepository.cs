@@ -15,14 +15,16 @@ namespace MrPuzza.Domain.Infra.Repositories
         {
             _context = context;
         }
-        public Task Create(T obj)
+        public async Task Create(T obj)
         {
-            throw new NotImplementedException();
+            await _context.AddAsync(obj);
+            await _context.SaveChangesAsync();
         }
 
-        public Task Delete(T obj)
+        public async Task Delete(T obj)
         {
-            throw new NotImplementedException();
+             _context.Remove(obj);
+            await _context.SaveChangesAsync();
         }
 
         public Task<List<T>> Get()

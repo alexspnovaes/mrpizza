@@ -1552,7 +1552,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "FluentValidation.AspNetCore": "9.1.2"
+          "FluentValidation.AspNetCore": "9.1.2",
+          "MediatR": "8.1.0"
         },
         "compile": {
           "bin/placeholder/MrPizza.Domain.dll": {}
