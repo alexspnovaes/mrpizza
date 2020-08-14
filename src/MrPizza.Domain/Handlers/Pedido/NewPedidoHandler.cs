@@ -15,13 +15,11 @@ namespace MrPizza.Domain.Handlers.NewPedidoHandler
     {
         private readonly IPedidoRepository _pedidoRepository;
         private readonly IEnderecoRepository _enderecoRepository;
-        private readonly IPizzaRepository _pizzaRepository;
         private readonly ISaborRepository _saborRepository;
-        public NewPedidoHandler(IPedidoRepository pedidoRepository, IEnderecoRepository enderecoRepository, IPizzaRepository pizzaRepository, ISaborRepository saborRepository)
+        public NewPedidoHandler(IPedidoRepository pedidoRepository, IEnderecoRepository enderecoRepository,  ISaborRepository saborRepository)
         {
             _pedidoRepository = pedidoRepository;
             _enderecoRepository = enderecoRepository;
-            _pizzaRepository = pizzaRepository;
             _saborRepository = saborRepository;
         }
 
@@ -33,9 +31,8 @@ namespace MrPizza.Domain.Handlers.NewPedidoHandler
             var sabores = await _saborRepository.Get();
             foreach (var p in request.Pizzas)
             {
-                var pizza = new Pizza(pedido,0);
+                var pizza = new Pizza(pedido,sabores.Where(x => p.Sabores.Contains(x.Id)).Sum(s => s.Valor) / p.Sabores.Count);
                 pizza.PizzaSabores = p.Sabores.Select(s => new PizzaSabor(pizza.Id, s)).ToList();
-                //await _pizzaRepository.Create(pizza);
                 pizzas.Add(pizza);
             }
             await _enderecoRepository.Create(endereco);

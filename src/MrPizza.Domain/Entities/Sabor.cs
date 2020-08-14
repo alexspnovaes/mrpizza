@@ -8,6 +8,7 @@ namespace MrPizza.Domain.Entities
     {
         public Sabor(string descricao, decimal valor)
         {
+            Id = Guid.NewGuid();
             Descricao = descricao;
             Valor = valor;
         }

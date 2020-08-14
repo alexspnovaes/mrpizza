@@ -10,7 +10,7 @@ namespace MrPizza.Domain.Infra.Contexts
         public DbSet<Usuario> Usuarios { get; set; }
         public MrPizzaContext(DbContextOptions<MrPizzaContext> options) : base(options)
         {
-            
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -44,7 +44,7 @@ namespace MrPizza.Domain.Infra.Contexts
                 entity.Property(e => e.Senha).IsRequired().HasColumnType("varchar(100)");
                 entity.Property(e => e.Telefone).IsRequired().HasColumnType("varchar(9)");
             });
-            
+
             modelBuilder.Entity<Pizza>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_pizzaId");
@@ -69,6 +69,15 @@ namespace MrPizza.Domain.Infra.Contexts
                 entity.Property(e => e.Descricao).IsRequired().HasColumnType("varchar(100)");
                 entity.Property(e => e.Valor).IsRequired().HasColumnType("decimal(8,2)");
             });
+
+            modelBuilder.Entity<Sabor>().HasData(
+                new Sabor("3 Queijos", 50),
+                new Sabor("Frango com requeijão ", (decimal)59.99),
+                new Sabor("Mussarela ", (decimal)42.50),
+                new Sabor("Calabresa ", (decimal)42.50),
+                new Sabor("Pepperoni", 55),
+                new Sabor("Portuguesa ", 45),
+                new Sabor("Veggie ", (decimal)59.99));
         }
     }
 }

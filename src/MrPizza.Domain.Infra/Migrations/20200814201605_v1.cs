@@ -127,6 +127,18 @@ namespace MrPizza.Domain.Infra.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Sabor",
+                columns: new[] { "Id", "Descricao", "Valor" },
+                values: new object[,]
+                {
+                    { new Guid("404fa516-7ef4-4a38-b584-e62fd7542783"), "3 Queijos", 50m },
+                    { new Guid("bcf86e4d-9fd0-4713-9770-45645f3def0e"), "Frango ", 59.99m },
+                    { new Guid("9e51543a-3e80-43b1-95ee-0223569a3f3d"), "Requeijão ", 42.5m },
+                    { new Guid("c913c12d-5728-4f52-a1b4-37e87d2c88bc"), "Mussarela ", 42.5m },
+                    { new Guid("a4e40d28-ed30-41c2-8321-cfec7fbb3b0b"), "Calabresa ", 55m }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Pedidos_UsuarioId",
                 table: "Pedidos",

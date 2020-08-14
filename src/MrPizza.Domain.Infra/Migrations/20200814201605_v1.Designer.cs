@@ -10,7 +10,7 @@ using MrPizza.Domain.Infra.Contexts;
 namespace MrPizza.Domain.Infra.Migrations
 {
     [DbContext(typeof(MrPizzaContext))]
-    [Migration("20200814194127_v1")]
+    [Migration("20200814201605_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -146,6 +146,38 @@ namespace MrPizza.Domain.Infra.Migrations
                         .HasName("PK_saborId");
 
                     b.ToTable("Sabor");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("404fa516-7ef4-4a38-b584-e62fd7542783"),
+                            Descricao = "3 Queijos",
+                            Valor = 50m
+                        },
+                        new
+                        {
+                            Id = new Guid("bcf86e4d-9fd0-4713-9770-45645f3def0e"),
+                            Descricao = "Frango ",
+                            Valor = 59.99m
+                        },
+                        new
+                        {
+                            Id = new Guid("9e51543a-3e80-43b1-95ee-0223569a3f3d"),
+                            Descricao = "Requeijão ",
+                            Valor = 42.5m
+                        },
+                        new
+                        {
+                            Id = new Guid("c913c12d-5728-4f52-a1b4-37e87d2c88bc"),
+                            Descricao = "Mussarela ",
+                            Valor = 42.5m
+                        },
+                        new
+                        {
+                            Id = new Guid("a4e40d28-ed30-41c2-8321-cfec7fbb3b0b"),
+                            Descricao = "Calabresa ",
+                            Valor = 55m
+                        });
                 });
 
             modelBuilder.Entity("MrPizza.Domain.Entities.Usuario", b =>
