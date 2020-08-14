@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace MrPizza.Domain.Infra.Repositories
 {
@@ -29,7 +30,7 @@ namespace MrPizza.Domain.Infra.Repositories
 
         public Task<List<T>> Get()
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().AsNoTracking().ToListAsync();
         }
 
         public Task<T> Get(Guid id)

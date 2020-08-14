@@ -6,8 +6,14 @@ namespace MrPizza.Domain.Entities
 {
     public class Sabor : BaseEntity
     {
-        public string Descricao { get; set; }
-        public decimal Valor { get; set; }
-        public List<PizzaSabor> PizzaSabores { get; set; }
+        public Sabor(string descricao, decimal valor)
+        {
+            Descricao = descricao;
+            Valor = valor;
+        }
+
+        public string Descricao { get;  }
+        public decimal Valor { get; }
+        public List<PizzaSabor> PizzaSabores { get; }
     }
 }

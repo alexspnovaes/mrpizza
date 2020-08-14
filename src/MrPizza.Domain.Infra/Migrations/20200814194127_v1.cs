@@ -16,25 +16,13 @@ namespace MrPizza.Domain.Infra.Migrations
                     Numero = table.Column<string>(type: "varchar(10)", nullable: false),
                     Complemento = table.Column<string>(type: "varchar(20)", nullable: true),
                     Bairro = table.Column<string>(type: "varchar(100)", nullable: false),
-                    CEP = table.Column<string>(type: "varchar(8)", nullable: false),
+                    Cep = table.Column<string>(type: "varchar(8)", nullable: false),
                     Cidade = table.Column<string>(type: "varchar(50)", nullable: false),
                     Estado = table.Column<string>(type: "varchar(2)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_enderecoId", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Pizzas",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    Valor = table.Column<decimal>(type: "decimal(8,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_pizzaId", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,31 +63,6 @@ namespace MrPizza.Domain.Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PizzaSabor",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    IdPizza = table.Column<Guid>(nullable: false),
-                    IdSabor = table.Column<Guid>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_pizzaSaborId", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PizzaSabor_Pizzas_IdPizza",
-                        column: x => x.IdPizza,
-                        principalTable: "Pizzas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PizzaSabor_Sabor_IdPizza",
-                        column: x => x.IdPizza,
-                        principalTable: "Sabor",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Pedidos",
                 columns: table => new
                 {
@@ -121,39 +84,48 @@ namespace MrPizza.Domain.Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PedidoPizza",
+                name: "Pizzas",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    PedidoId = table.Column<Guid>(nullable: true),
+                    Valor = table.Column<decimal>(type: "decimal(8,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_pizzaId", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pizzas_Pedidos_PedidoId",
+                        column: x => x.PedidoId,
+                        principalTable: "Pedidos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PizzaSabor",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
                     IdPizza = table.Column<Guid>(nullable: false),
-                    IdPedido = table.Column<Guid>(nullable: false)
+                    IdSabor = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_pedidoPizzaId", x => x.Id);
+                    table.PrimaryKey("PK_pizzaSaborId", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_PedidoPizza_Pedidos_IdPedido",
-                        column: x => x.IdPedido,
-                        principalTable: "Pedidos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PedidoPizza_Pizzas_IdPizza",
+                        name: "FK_PizzaSabor_Pizzas_IdPizza",
                         column: x => x.IdPizza,
                         principalTable: "Pizzas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PizzaSabor_Sabor_IdSabor",
+                        column: x => x.IdSabor,
+                        principalTable: "Sabor",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PedidoPizza_IdPedido",
-                table: "PedidoPizza",
-                column: "IdPedido");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PedidoPizza_IdPizza",
-                table: "PedidoPizza",
-                column: "IdPizza");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pedidos_UsuarioId",
@@ -161,9 +133,19 @@ namespace MrPizza.Domain.Infra.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Pizzas_PedidoId",
+                table: "Pizzas",
+                column: "PedidoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PizzaSabor_IdPizza",
                 table: "PizzaSabor",
                 column: "IdPizza");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PizzaSabor_IdSabor",
+                table: "PizzaSabor",
+                column: "IdSabor");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Usuarios_EnderecoId",
@@ -174,19 +156,16 @@ namespace MrPizza.Domain.Infra.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PedidoPizza");
-
-            migrationBuilder.DropTable(
                 name: "PizzaSabor");
-
-            migrationBuilder.DropTable(
-                name: "Pedidos");
 
             migrationBuilder.DropTable(
                 name: "Pizzas");
 
             migrationBuilder.DropTable(
                 name: "Sabor");
+
+            migrationBuilder.DropTable(
+                name: "Pedidos");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");

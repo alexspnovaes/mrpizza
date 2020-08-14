@@ -15,16 +15,6 @@ namespace MrPizza.Domain.Infra.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<PedidoPizza>().HasKey(pp => pp.Id).HasName("PK_pedidoPizzaId");
-            modelBuilder.Entity<PedidoPizza>()
-                .HasOne(pp => pp.Pizza)
-                .WithMany(p => p.PedidosPizzas)
-                .HasForeignKey(pp => pp.IdPizza);
-            modelBuilder.Entity<PedidoPizza>()
-                .HasOne(pp => pp.Pedido)
-                .WithMany(p => p.PedidosPizzas)
-                .HasForeignKey(pp => pp.IdPedido);
-
             modelBuilder.Entity<PizzaSabor>().HasKey(ps => ps.Id).HasName("PK_pizzaSaborId");
             modelBuilder.Entity<PizzaSabor>()
                 .HasOne(ps => ps.Pizza)
@@ -33,10 +23,12 @@ namespace MrPizza.Domain.Infra.Contexts
             modelBuilder.Entity<PizzaSabor>()
                 .HasOne(ps => ps.Sabor)
                 .WithMany(p => p.PizzaSabores)
-                .HasForeignKey(ps => ps.IdPizza);
+                .HasForeignKey(ps => ps.IdSabor);
 
             modelBuilder.Entity<Pedido>(entity =>
             {
+                entity.HasMany(e => e.Pizzas)
+                    .WithOne(e => e.Pedido);
                 entity.HasKey(e => e.Id).HasName("PK_pedidoId");
                 entity.Property(e => e.IdEndereco);
                 entity.Property(e => e.IdUsuario);
@@ -52,7 +44,7 @@ namespace MrPizza.Domain.Infra.Contexts
                 entity.Property(e => e.Senha).IsRequired().HasColumnType("varchar(100)");
                 entity.Property(e => e.Telefone).IsRequired().HasColumnType("varchar(9)");
             });
-
+            
             modelBuilder.Entity<Pizza>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_pizzaId");
@@ -63,7 +55,7 @@ namespace MrPizza.Domain.Infra.Contexts
             {
                 entity.HasKey(e => e.Id).HasName("PK_enderecoId");
                 entity.Property(e => e.Bairro).IsRequired().HasColumnType("varchar(100)");
-                entity.Property(e => e.CEP).IsRequired().HasColumnType("varchar(8)");
+                entity.Property(e => e.Cep).IsRequired().HasColumnType("varchar(8)");
                 entity.Property(e => e.Complemento).HasColumnType("varchar(20)");
                 entity.Property(e => e.Cidade).IsRequired().HasColumnType("varchar(50)");
                 entity.Property(e => e.Numero).IsRequired().HasColumnType("varchar(10)");

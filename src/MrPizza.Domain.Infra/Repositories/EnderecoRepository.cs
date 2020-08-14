@@ -4,11 +4,10 @@ using MrPizza.Domain.Infra.Contexts;
 
 namespace MrPizza.Domain.Infra.Repositories
 {
-    public class PizzaRepository : BaseRepository<Pizza>, IPizzaRepository
+    public class PedidoRepository : BaseRepository<Pedido>, IPedidoRepository
     {
         private readonly MrPizzaContext _context;
-
-        public PizzaRepository(MrPizzaContext context) : base(context)
+        public PedidoRepository(MrPizzaContext context) : base(context)
         {
             _context = context;
         }

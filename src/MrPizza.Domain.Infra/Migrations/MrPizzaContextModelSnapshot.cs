@@ -29,7 +29,7 @@ namespace MrPizza.Domain.Infra.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("CEP")
+                    b.Property<string>("Cep")
                         .IsRequired()
                         .HasColumnType("varchar(8)");
 
@@ -85,32 +85,13 @@ namespace MrPizza.Domain.Infra.Migrations
                     b.ToTable("Pedidos");
                 });
 
-            modelBuilder.Entity("MrPizza.Domain.Entities.PedidoPizza", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdPedido")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdPizza")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id")
-                        .HasName("PK_pedidoPizzaId");
-
-                    b.HasIndex("IdPedido");
-
-                    b.HasIndex("IdPizza");
-
-                    b.ToTable("PedidoPizza");
-                });
-
             modelBuilder.Entity("MrPizza.Domain.Entities.Pizza", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("PedidoId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Valor")
@@ -118,6 +99,8 @@ namespace MrPizza.Domain.Infra.Migrations
 
                     b.HasKey("Id")
                         .HasName("PK_pizzaId");
+
+                    b.HasIndex("PedidoId");
 
                     b.ToTable("Pizzas");
                 });
@@ -138,6 +121,8 @@ namespace MrPizza.Domain.Infra.Migrations
                         .HasName("PK_pizzaSaborId");
 
                     b.HasIndex("IdPizza");
+
+                    b.HasIndex("IdSabor");
 
                     b.ToTable("PizzaSabor");
                 });
@@ -208,19 +193,11 @@ namespace MrPizza.Domain.Infra.Migrations
                         .HasForeignKey("UsuarioId");
                 });
 
-            modelBuilder.Entity("MrPizza.Domain.Entities.PedidoPizza", b =>
+            modelBuilder.Entity("MrPizza.Domain.Entities.Pizza", b =>
                 {
                     b.HasOne("MrPizza.Domain.Entities.Pedido", "Pedido")
-                        .WithMany("PedidosPizzas")
-                        .HasForeignKey("IdPedido")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MrPizza.Domain.Entities.Pizza", "Pizza")
-                        .WithMany("PedidosPizzas")
-                        .HasForeignKey("IdPizza")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Pizzas")
+                        .HasForeignKey("PedidoId");
                 });
 
             modelBuilder.Entity("MrPizza.Domain.Entities.PizzaSabor", b =>
@@ -233,7 +210,7 @@ namespace MrPizza.Domain.Infra.Migrations
 
                     b.HasOne("MrPizza.Domain.Entities.Sabor", "Sabor")
                         .WithMany("PizzaSabores")
-                        .HasForeignKey("IdPizza")
+                        .HasForeignKey("IdSabor")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

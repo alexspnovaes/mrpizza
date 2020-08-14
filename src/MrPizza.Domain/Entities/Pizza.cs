@@ -6,7 +6,18 @@ namespace MrPizza.Domain.Entities
 {
     public class Pizza : BaseEntity
     {
-        public List<PedidoPizza> PedidosPizzas { get; set; }
+        public Pizza()
+        {
+        }
+
+        public Pizza(Pedido pedido,  decimal valor)
+        {
+            Id = Guid.NewGuid();
+            Pedido = pedido;
+            Valor = valor;
+        }
+
+        public Pedido Pedido { get; set; }
         public List<PizzaSabor> PizzaSabores { get; set; }
         public decimal Valor { get; set; }
     }

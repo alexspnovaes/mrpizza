@@ -4,10 +4,10 @@ using MrPizza.Domain.Infra.Contexts;
 
 namespace MrPizza.Domain.Infra.Repositories
 {
-    public class PedidoRepository : BaseRepository<Pedido>, IPedidoRepository
+    public class EnderecoRepository : BaseRepository<Endereco>, IEnderecoRepository
     {
         private readonly MrPizzaContext _context;
-        public PedidoRepository(MrPizzaContext context) : base(context)
+        public EnderecoRepository(MrPizzaContext context) : base(context)
         {
             _context = context;
         }

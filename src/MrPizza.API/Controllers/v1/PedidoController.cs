@@ -15,7 +15,7 @@ namespace MrPizza.Api.Controllers
         {
             _mediator = mediator;
         }
-
+        [HttpPost]
         public async Task<IActionResult> Post([FromBody] NewPedidoCommand command)
         {
             var result = await _mediator.Send(new NewPedidoCommand(command.Pizzas, command.IdUsuario, command.Endereco));

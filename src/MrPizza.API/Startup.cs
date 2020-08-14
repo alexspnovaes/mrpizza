@@ -1,11 +1,15 @@
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MrPizza.Domain.Commands.Pedido;
 using MrPizza.Domain.Infra.Contexts;
+using MrPizza.Domain.Infra.Repositories;
+using MrPizza.Domain.Interfaces.Repositories;
 
 namespace MrPizza
 {
@@ -28,9 +32,12 @@ namespace MrPizza
             services.AddCors();
             services.AddDbContext<MrPizzaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
 
-            //services.AddTransient<IClientRepository, ClienteRepository>();
+            services.AddTransient<IPedidoRepository, PedidoRepository>();
+            services.AddTransient<IEnderecoRepository, EnderecoRepository>();
+            services.AddTransient<IPizzaRepository, PizzaRepository>();
+            services.AddTransient<ISaborRepository, SaborRepository>();
             services.AddSwaggerGen();
-            //services.AddMediatR(typeof(NewClienteCommand).Assembly);
+            services.AddMediatR(typeof(NewPedidoCommand).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

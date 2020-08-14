@@ -2,7 +2,7 @@
 
 namespace MrPizza.Domain.Interfaces.Repositories
 {
-    public interface IEnderecoRepository :  IBaseRepository<Endereco>
+    public interface IPizzaRepository :  IBaseRepository<Pizza>
     {
     }
 }
