@@ -1,8 +1,8 @@
 ﻿using MrPizza.Domain.Entities;
 using MrPizza.Domain.Interfaces.Repositories;
-using MrPuzza.Domain.Infra.Contexts;
+using MrPizza.Domain.Infra.Contexts;
 
-namespace MrPuzza.Domain.Infra.Repositories
+namespace MrPizza.Domain.Infra.Repositories
 {
     public class PedidoRepository : BaseRepository<Pedido>, IPedidoRepository
     {

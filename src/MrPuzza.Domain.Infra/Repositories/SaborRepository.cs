@@ -1,11 +1,11 @@
 ﻿using MrPizza.Domain.Entities;
 using MrPizza.Domain.Interfaces.Repositories;
-using MrPuzza.Domain.Infra.Contexts;
+using MrPizza.Domain.Infra.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MrPuzza.Domain.Infra.Repositories
+namespace MrPizza.Domain.Infra.Repositories
 {
     public class SaborRepository : BaseRepository<Sabor>, ISaborRepository
     {

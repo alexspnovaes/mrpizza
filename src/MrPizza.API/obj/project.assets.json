@@ -1565,7 +1565,7 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "MrPuzza.Domain.Infra/1.0.0": {
+      "MrPizza.Domain.Infra/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -1575,10 +1575,10 @@
           "MrPizza.Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/MrPuzza.Domain.Infra.dll": {}
+          "bin/placeholder/MrPizza.Domain.Infra.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MrPuzza.Domain.Infra.dll": {}
+          "bin/placeholder/MrPizza.Domain.Infra.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -5693,10 +5693,10 @@
       "path": "../MrPizza.Domain/MrPizza.Domain.csproj",
       "msbuildProject": "../MrPizza.Domain/MrPizza.Domain.csproj"
     },
-    "MrPuzza.Domain.Infra/1.0.0": {
+    "MrPizza.Domain.Infra/1.0.0": {
       "type": "project",
-      "path": "../MrPuzza.Domain.Infra/MrPuzza.Domain.Infra.csproj",
-      "msbuildProject": "../MrPuzza.Domain.Infra/MrPuzza.Domain.Infra.csproj"
+      "path": "../MrPuzza.Domain.Infra/MrPizza.Domain.Infra.csproj",
+      "msbuildProject": "../MrPuzza.Domain.Infra/MrPizza.Domain.Infra.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5707,7 +5707,7 @@
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.7",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.7",
-      "MrPuzza.Domain.Infra >= 1.0.0",
+      "MrPizza.Domain.Infra >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.5.1"
     ]
   },
@@ -5742,8 +5742,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPuzza.Domain.Infra.csproj": {
-              "projectPath": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPuzza.Domain.Infra.csproj"
+            "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPizza.Domain.Infra.csproj": {
+              "projectPath": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPizza.Domain.Infra.csproj"
             }
           }
         }

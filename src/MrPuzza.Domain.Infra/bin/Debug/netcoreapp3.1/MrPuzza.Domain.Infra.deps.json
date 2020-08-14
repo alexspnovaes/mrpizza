@@ -50,6 +50,14 @@
           }
         }
       },
+      "MediatR/8.1.0": {
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.1.0.0"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -1063,7 +1071,8 @@
       },
       "MrPizza.Domain/1.0.0": {
         "dependencies": {
-          "FluentValidation.AspNetCore": "9.1.2"
+          "FluentValidation.AspNetCore": "9.1.2",
+          "MediatR": "8.1.0"
         },
         "runtime": {
           "MrPizza.Domain.dll": {}
@@ -1097,6 +1106,13 @@
       "sha512": "sha512-Z25RmO0NnSrIos/136TJ4nZ+alBg1CG8kyaIGimrUToJZ5G61yiVht79OrodZz7EGV7RDg0fggJAsV13kOvfaQ==",
       "path": "fluentvalidation.dependencyinjectionextensions/9.1.2",
       "hashPath": "fluentvalidation.dependencyinjectionextensions.9.1.2.nupkg.sha512"
+    },
+    "MediatR/8.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KJFnA0MV83bNOhvYbjIX1iDykhwFXoQu0KV7E1SVbNA/CmO2I7SAm2Baly0eS7VJ2GwlmStLajBfeiNgTpvYzQ==",
+      "path": "mediatr/8.1.0",
+      "hashPath": "mediatr.8.1.0.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",

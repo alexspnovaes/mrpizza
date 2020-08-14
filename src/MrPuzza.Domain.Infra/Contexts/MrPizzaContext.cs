@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MrPizza.Domain.Entities;
 
-namespace MrPuzza.Domain.Infra.Contexts
+namespace MrPizza.Domain.Infra.Contexts
 {
     public class MrPizzaContext : DbContext
     {

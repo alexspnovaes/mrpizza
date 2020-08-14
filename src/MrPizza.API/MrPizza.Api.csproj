@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MrPuzza.Domain.Infra\MrPuzza.Domain.Infra.csproj" />
+    <ProjectReference Include="..\MrPizza.Domain.Infra\MrPizza.Domain.Infra.csproj" />
   </ItemGroup>
 
 

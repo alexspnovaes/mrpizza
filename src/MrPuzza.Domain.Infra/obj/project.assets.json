@@ -5814,9 +5814,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPuzza.Domain.Infra.csproj",
-      "projectName": "MrPuzza.Domain.Infra",
-      "projectPath": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPuzza.Domain.Infra.csproj",
+      "projectUniqueName": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPizza.Domain.Infra.csproj",
+      "projectName": "MrPizza.Domain.Infra",
+      "projectPath": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPizza.Domain.Infra.csproj",
       "packagesPath": "C:\\Users\\alexandre.novaes\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\obj\\",
       "projectStyle": "PackageReference",

@@ -13,7 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using MrPuzza.Domain.Infra.Contexts;
+using MrPizza.Domain.Infra.Contexts;
 
 namespace MrPizza
 {

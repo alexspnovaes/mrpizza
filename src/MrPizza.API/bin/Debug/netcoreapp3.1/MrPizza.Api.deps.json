@@ -1489,7 +1489,8 @@
       },
       "MrPizza.Domain/1.0.0": {
         "dependencies": {
-          "FluentValidation.AspNetCore": "9.1.2"
+          "FluentValidation.AspNetCore": "9.1.2",
+          "MediatR": "8.1.0"
         },
         "runtime": {
           "MrPizza.Domain.dll": {}

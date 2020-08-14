@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E5DACF9A-6E9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MrPizza.Domain", "src\MrPizza.Domain\MrPizza.Domain.csproj", "{260DD00E-B38B-4B45-B1B2-333BC19A9C51}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MrPuzza.Domain.Infra", "src\MrPuzza.Domain.Infra\MrPuzza.Domain.Infra.csproj", "{443FD955-ACE3-4DE0-8F2E-716AE58CC724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MrPizza.Domain.Infra", "src\MrPuzza.Domain.Infra\MrPizza.Domain.Infra.csproj", "{443FD955-ACE3-4DE0-8F2E-716AE58CC724}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F62E0762-2450-4ACE-85B3-0D398BE80267}"
 EndProject

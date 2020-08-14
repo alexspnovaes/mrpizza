@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MrPuzza.Domain.Infra.Repositories
+namespace MrPizza.Domain.Infra.Repositories
 {
     public class UsuarioRepository
     {

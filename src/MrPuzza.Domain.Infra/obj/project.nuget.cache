@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "USnA9GI6+CWOf116ezI/c3pZ0FMkFTBNINjMZOFzpjfgeh20gl0RJh4zp5DActMCoIf1GqRM4KgXTp2+3A6wrw==",
+  "dgSpecHash": "QNNPF8JpzgawXPm8RuJtM8zs73s60n2AR7wiY6PVE83iEd4F2YmOYjqpQ71Qh3euX9QwWtKJMZEVk/o33a7ZAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPuzza.Domain.Infra.csproj",
+  "projectFilePath": "C:\\Users\\alexandre.novaes\\source\\repos\\MrPizza\\src\\MrPuzza.Domain.Infra\\MrPizza.Domain.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexandre.novaes\\.nuget\\packages\\fluentvalidation\\9.1.2\\fluentvalidation.9.1.2.nupkg.sha512",
     "C:\\Users\\alexandre.novaes\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.1.2\\fluentvalidation.aspnetcore.9.1.2.nupkg.sha512",
