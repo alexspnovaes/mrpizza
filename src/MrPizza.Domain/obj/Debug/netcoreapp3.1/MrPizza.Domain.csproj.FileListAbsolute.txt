@@ -1,9 +1,9 @@
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\bin\Debug\netcoreapp3.1\MrPizza.Domain.deps.json
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\bin\Debug\netcoreapp3.1\MrPizza.Domain.dll
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\bin\Debug\netcoreapp3.1\MrPizza.Domain.pdb
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\obj\Debug\netcoreapp3.1\MrPizza.Domain.csprojAssemblyReference.cache
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\obj\Debug\netcoreapp3.1\MrPizza.Domain.AssemblyInfoInputs.cache
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\obj\Debug\netcoreapp3.1\MrPizza.Domain.AssemblyInfo.cs
-C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\bin\Debug\netcoreapp3.1\MrPizza.Domain.pdb
+C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\obj\Debug\netcoreapp3.1\MrPizza.Domain.csproj.CoreCompileInputs.cache
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\obj\Debug\netcoreapp3.1\MrPizza.Domain.dll
 C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\obj\Debug\netcoreapp3.1\MrPizza.Domain.pdb
-C:\Users\alexandre.novaes\source\repos\MrPizza\src\MrPizza.Domain\obj\Debug\netcoreapp3.1\MrPizza.Domain.csproj.CoreCompileInputs.cache

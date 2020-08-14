@@ -30,7 +30,8 @@
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.7",
           "Microsoft.EntityFrameworkCore.Design": "3.1.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.7",
-          "MrPuzza.Domain.Infra": "1.0.0",
+          "MrPizza.Domain": "1.0.0",
+          "MrPizza.Domain.Infra": "1.0.0",
           "Swashbuckle.AspNetCore": "5.5.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -1499,7 +1500,7 @@
           "MrPizza.Domain.dll": {}
         }
       },
-      "MrPuzza.Domain.Infra/1.0.0": {
+      "MrPizza.Domain.Infra/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.7",
           "Microsoft.EntityFrameworkCore.Relational": "3.1.7",
@@ -1507,10 +1508,10 @@
           "MrPizza.Domain": "1.0.0"
         },
         "runtime": {
-          "MrPuzza.Domain.Infra.dll": {}
+          "MrPizza.Domain.Infra.dll": {}
         },
         "compile": {
-          "MrPuzza.Domain.Infra.dll": {}
+          "MrPizza.Domain.Infra.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3903,7 +3904,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MrPuzza.Domain.Infra/1.0.0": {
+    "MrPizza.Domain.Infra/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
