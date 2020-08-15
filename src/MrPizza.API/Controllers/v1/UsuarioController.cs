@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -38,10 +39,10 @@ namespace MrPizza.Api.Controllers
                     return Ok();
                 return BadRequest(result.Errors);
             }
-            catch
+            catch(Exception ex)
             {
                 //logar erro em algum lugar
-                return StatusCode(500);
+                return StatusCode(500, ex.Message);
             }
         }
     }

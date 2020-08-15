@@ -1,6 +1,8 @@
-﻿using MrPizza.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using MrPizza.Domain.Entities;
 using MrPizza.Domain.Infra.Contexts;
 using MrPizza.Domain.Interfaces.Repositories;
+using System.Threading.Tasks;
 
 namespace MrPizza.Domain.Infra.Repositories
 {
@@ -11,5 +13,12 @@ namespace MrPizza.Domain.Infra.Repositories
         {
             _context = context;
         }
+
+        public async Task<Usuario> Get(string login, string senha)
+        {
+            return await _context.Usuario.FirstOrDefaultAsync(u => u.EmailLogin == login && u.Senha == senha);
+        }
+
+       
     }
 }
