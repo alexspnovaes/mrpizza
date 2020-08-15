@@ -37,7 +37,7 @@ namespace MrPizza.Domain.Handlers.NewPedidoHandler
             }
             await _enderecoRepository.Create(endereco);
             await _pedidoRepository.Create(pedido);
-            return GenericCommandResult.Success();
+            return GenericCommandResult.Success(pedido);
         }
     }
 }

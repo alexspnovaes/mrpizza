@@ -5,9 +5,9 @@ namespace MrPizza.Domain.Infra.Contexts
 {
     public class MrPizzaContext : DbContext
     {
-        public DbSet<Pizza> Pizzas { get; set; }
-        public DbSet<Pedido> Pedidos { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Pizza> Pizza { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
         public MrPizzaContext(DbContextOptions<MrPizzaContext> options) : base(options)
         {
 
@@ -36,11 +36,13 @@ namespace MrPizza.Domain.Infra.Contexts
 
             modelBuilder.Entity<Usuario>(entity =>
             {
+                entity.HasMany(e => e.Enderecos)
+                    .WithOne(e => e.Usuario)
+                    .HasForeignKey(e => e.IdUsuario);
                 entity.HasKey(e => e.Id).HasName("PK_usuarioId");
                 entity.Property(e => e.Nome).IsRequired().HasColumnType("varchar(100)");
                 entity.Property(e => e.DDD).IsRequired().HasColumnType("varchar(2)");
                 entity.Property(e => e.EmailLogin).IsRequired().HasColumnType("varchar(100)");
-                entity.Property(e => e.IdEndereco).IsRequired();
                 entity.Property(e => e.Senha).IsRequired().HasColumnType("varchar(100)");
                 entity.Property(e => e.Telefone).IsRequired().HasColumnType("varchar(9)");
             });
@@ -59,7 +61,7 @@ namespace MrPizza.Domain.Infra.Contexts
                 entity.Property(e => e.Complemento).HasColumnType("varchar(20)");
                 entity.Property(e => e.Cidade).IsRequired().HasColumnType("varchar(50)");
                 entity.Property(e => e.Numero).IsRequired().HasColumnType("varchar(10)");
-                entity.Property(e => e.Rua).HasColumnName("endereco").IsRequired().HasColumnType("varchar(80)");
+                entity.Property(e => e.Rua).HasColumnName("Endereco").IsRequired().HasColumnType("varchar(80)");
                 entity.Property(e => e.Estado).IsRequired().HasColumnType("varchar(2)");
             });
 

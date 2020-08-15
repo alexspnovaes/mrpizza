@@ -26,5 +26,7 @@ namespace MrPizza.Domain.Entities
         public string Cep { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
+        public Usuario Usuario { get; set; }
+        public Guid? IdUsuario { get; set; }
     }
 }

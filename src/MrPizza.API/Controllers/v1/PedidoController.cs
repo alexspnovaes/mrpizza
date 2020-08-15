@@ -15,6 +15,17 @@ namespace MrPizza.Api.Controllers
         {
             _mediator = mediator;
         }
+
+        [HttpPost]
+        [Route("realizar-semlogin")]
+        public async Task<IActionResult> OrderWithoutLogin([FromBody] NewPedidoCommand command)
+        {
+            var result = await _mediator.Send(new NewPedidoCommand(command.Pizzas, command.IdUsuario, command.Endereco));
+            if (result.Ok)
+                return Ok(result.Data);
+            return BadRequest(result.Errors);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] NewPedidoCommand command)
         {

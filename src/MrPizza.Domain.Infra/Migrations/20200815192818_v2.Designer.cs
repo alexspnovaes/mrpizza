@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MrPizza.Domain.Infra.Contexts;
 
 namespace MrPizza.Domain.Infra.Migrations
 {
     [DbContext(typeof(MrPizzaContext))]
-    partial class MrPizzaContextModelSnapshot : ModelSnapshot
+    [Migration("20200815192818_v2")]
+    partial class v2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,7 +89,7 @@ namespace MrPizza.Domain.Infra.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("Pedido");
+                    b.ToTable("Pedidos");
                 });
 
             modelBuilder.Entity("MrPizza.Domain.Entities.Pizza", b =>
@@ -107,7 +109,7 @@ namespace MrPizza.Domain.Infra.Migrations
 
                     b.HasIndex("PedidoId");
 
-                    b.ToTable("Pizza");
+                    b.ToTable("Pizzas");
                 });
 
             modelBuilder.Entity("MrPizza.Domain.Entities.PizzaSabor", b =>
@@ -153,43 +155,43 @@ namespace MrPizza.Domain.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("bd332ae9-affe-4f19-841e-c13cc45d6b30"),
+                            Id = new Guid("8be7a499-3804-4d03-8012-5da4f3c6fdee"),
                             Descricao = "3 Queijos",
                             Valor = 50m
                         },
                         new
                         {
-                            Id = new Guid("97778198-5c3d-419c-844c-824991622c5f"),
+                            Id = new Guid("2fa0b740-14e0-4835-a4a1-192b085bbc8b"),
                             Descricao = "Frango com requeijão ",
                             Valor = 59.99m
                         },
                         new
                         {
-                            Id = new Guid("ea15ccfc-9fbe-41e6-874e-9a9ae6412cba"),
+                            Id = new Guid("d128e8c5-fbae-4f08-971a-3f665b4cc535"),
                             Descricao = "Mussarela ",
                             Valor = 42.5m
                         },
                         new
                         {
-                            Id = new Guid("e6b5473e-3e91-4676-8840-f5bc95c58f95"),
+                            Id = new Guid("b16693c9-ec4b-470a-a27d-2fe17662d555"),
                             Descricao = "Calabresa ",
                             Valor = 42.5m
                         },
                         new
                         {
-                            Id = new Guid("f5b177f0-b823-430a-bc76-6150dbd2f6bb"),
+                            Id = new Guid("a568bf5f-3761-4825-9d5c-f337f337755c"),
                             Descricao = "Pepperoni",
                             Valor = 55m
                         },
                         new
                         {
-                            Id = new Guid("f51d2342-79dd-4817-b637-1db10bc95b0a"),
+                            Id = new Guid("b13926e4-0205-4c48-bc71-3c2e7a08d203"),
                             Descricao = "Portuguesa ",
                             Valor = 45m
                         },
                         new
                         {
-                            Id = new Guid("2915805c-dd98-4e97-b212-ee0132e6512f"),
+                            Id = new Guid("d4e50a26-c51d-4479-bc24-890645106050"),
                             Descricao = "Veggie ",
                             Valor = 59.99m
                         });
@@ -209,6 +211,9 @@ namespace MrPizza.Domain.Infra.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
+                    b.Property<Guid>("IdEndereco")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
@@ -224,7 +229,7 @@ namespace MrPizza.Domain.Infra.Migrations
                     b.HasKey("Id")
                         .HasName("PK_usuarioId");
 
-                    b.ToTable("Usuario");
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("MrPizza.Domain.Entities.Endereco", b =>

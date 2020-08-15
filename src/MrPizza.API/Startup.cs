@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MrPizza.Domain.Commands.Pedido;
+using MrPizza.Domain.Commands.Usuario;
 using MrPizza.Domain.Infra.Contexts;
 using MrPizza.Domain.Infra.Repositories;
 using MrPizza.Domain.Interfaces.Repositories;
@@ -36,8 +37,10 @@ namespace MrPizza
             services.AddTransient<IEnderecoRepository, EnderecoRepository>();
             services.AddTransient<IPizzaRepository, PizzaRepository>();
             services.AddTransient<ISaborRepository, SaborRepository>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddSwaggerGen();
             services.AddMediatR(typeof(NewPedidoCommand).Assembly);
+            services.AddMediatR(typeof(NewUsuarioCommand).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
