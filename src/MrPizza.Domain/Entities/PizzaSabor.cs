@@ -19,9 +19,9 @@ namespace MrPizza.Domain.Entities
 
        
 
-        public Pizza Pizza { get; set; }
-        public Guid IdPizza { get; set; }
-        public Sabor Sabor { get; set; }
-        public Guid IdSabor { get; set; }
+        public Pizza Pizza { get;  }
+        public Guid IdPizza { get; }
+        public Sabor Sabor { get; }
+        public Guid IdSabor { get; }
     }
 }

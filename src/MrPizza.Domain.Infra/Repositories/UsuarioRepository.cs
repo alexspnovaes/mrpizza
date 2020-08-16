@@ -2,6 +2,8 @@
 using MrPizza.Domain.Entities;
 using MrPizza.Domain.Infra.Contexts;
 using MrPizza.Domain.Interfaces.Repositories;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MrPizza.Domain.Infra.Repositories
@@ -12,6 +14,13 @@ namespace MrPizza.Domain.Infra.Repositories
         public UsuarioRepository(MrPizzaContext context) : base(context)
         {
             _context = context;
+        }
+
+        public async Task<Usuario> GetUserPedidos(Guid id)
+        {
+            return await _context.Usuario
+                .Include("Pedidos.Pizzas.PizzaSabores.Sabor")
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<Usuario> Get(string login, string senha)

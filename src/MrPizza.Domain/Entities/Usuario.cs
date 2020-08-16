@@ -20,11 +20,12 @@ namespace MrPizza.Domain.Entities
             Enderecos = enderecos;
         }
 
-        public string Nome { get; set; }
-        public string EmailLogin { get; set; }
-        public string Senha { get; set; }
-        public string DDD { get; set; }
-        public string Telefone { get; set; }
-        public List<Endereco> Enderecos { get; set; }
+        public string Nome { get; }
+        public string EmailLogin { get; }
+        public string Senha { get; }
+        public string DDD { get; }
+        public string Telefone { get; }
+        public List<Endereco> Enderecos { get; }
+        public List<Pedido> Pedidos { get; }
     }
 }

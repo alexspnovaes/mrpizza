@@ -3,6 +3,7 @@ using MrPizza.Domain.Commands.Usuario;
 using MrPizza.Domain.Entities;
 using MrPizza.Domain.Interfaces.Repositories;
 using MrPizza.Domain.Utils;
+using MrPizza.Domain.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,17 +23,19 @@ namespace MrPizza.Domain.Handlers.NewUsuarioUsuarioHandler
 
         public async Task<GenericCommandResult> Handle(NewUsuarioCommand request, CancellationToken cancellationToken)
         {
+            var usuario = await _usuarioRepository.Get(request.Login);
+            if (usuario != null)
+                return GenericCommandResult.Failure(new List<string> { ErrorMessages.UserAlreadyExists });
+
+            var validator = new NewUsuarioCommandValidator();
+            var results = validator.Validate(request);
+            
+            if (!results.IsValid)
+                return GenericCommandResult.Failure(results.Errors);
+
+
             var passEncrypt = PasswordEncrypt.Encrypt(request.Senha);
-            var enderecos = request.Enderecos.Select(s => new Endereco
-            {
-                Bairro = s.Bairro,
-                Cep = s.Cep,
-                Cidade = s.Cidade,
-                Complemento = s.Complemento,
-                Estado = s.Estado,
-                Numero = s.Numero,
-                Rua = s.Rua
-            }).ToList();
+            var enderecos = request.Enderecos.Select(s => new Endereco(s.Rua, s.Numero, s.Complemento, s.Bairro, s.Cep, s.Cidade, s.Estado)).ToList();
             var Usuario = new Usuario(request.Nome, request.Login, passEncrypt, request.DDD, request.Telefone, enderecos);
             await _usuarioRepository.Create(Usuario);
             return GenericCommandResult.Success();

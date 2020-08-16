@@ -10,8 +10,8 @@ using MrPizza.Domain.Infra.Contexts;
 namespace MrPizza.Domain.Infra.Migrations
 {
     [DbContext(typeof(MrPizzaContext))]
-    [Migration("20200815192955_v3")]
-    partial class v3
+    [Migration("20200816223312_v1")]
+    partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,7 +55,7 @@ namespace MrPizza.Domain.Infra.Migrations
 
                     b.Property<string>("Rua")
                         .IsRequired()
-                        .HasColumnName("endereco")
+                        .HasColumnName("Endereco")
                         .HasColumnType("varchar(80)");
 
                     b.HasKey("Id")
@@ -81,15 +81,12 @@ namespace MrPizza.Domain.Infra.Migrations
                     b.Property<Guid?>("IdUsuario")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("UsuarioId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id")
                         .HasName("PK_pedidoId");
 
-                    b.HasIndex("UsuarioId");
+                    b.HasIndex("IdUsuario");
 
-                    b.ToTable("Pedidos");
+                    b.ToTable("Pedido");
                 });
 
             modelBuilder.Entity("MrPizza.Domain.Entities.Pizza", b =>
@@ -109,7 +106,7 @@ namespace MrPizza.Domain.Infra.Migrations
 
                     b.HasIndex("PedidoId");
 
-                    b.ToTable("Pizzas");
+                    b.ToTable("Pizza");
                 });
 
             modelBuilder.Entity("MrPizza.Domain.Entities.PizzaSabor", b =>
@@ -155,43 +152,43 @@ namespace MrPizza.Domain.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("62aeb419-4f3a-4e20-8a2a-dacc930d229b"),
+                            Id = new Guid("afd43ced-bb64-4b2c-9b6d-358597484320"),
                             Descricao = "3 Queijos",
                             Valor = 50m
                         },
                         new
                         {
-                            Id = new Guid("837d08ee-32a6-48bf-9c75-ac0da4ceacde"),
+                            Id = new Guid("65f94207-10d6-4ffb-841d-8e8fda817555"),
                             Descricao = "Frango com requeijão ",
                             Valor = 59.99m
                         },
                         new
                         {
-                            Id = new Guid("6a1d2b99-58d3-4397-9a18-2e3a2dca37d6"),
+                            Id = new Guid("3de1e14e-4938-42ec-96b9-a4359f1ff072"),
                             Descricao = "Mussarela ",
                             Valor = 42.5m
                         },
                         new
                         {
-                            Id = new Guid("f11009b9-a501-4469-b72a-ba88b1c8e264"),
+                            Id = new Guid("bbb1d0c8-ee7c-4ef5-8d49-9a98293f5c9d"),
                             Descricao = "Calabresa ",
                             Valor = 42.5m
                         },
                         new
                         {
-                            Id = new Guid("89af4cc9-dcf4-431c-9943-998f056cacf4"),
+                            Id = new Guid("c06bfce9-12a9-45b1-9bf6-06a23a579c9d"),
                             Descricao = "Pepperoni",
                             Valor = 55m
                         },
                         new
                         {
-                            Id = new Guid("19bce1a6-4830-4d9d-b24c-6aaa7be83f85"),
+                            Id = new Guid("06925036-bbec-4e46-b804-5137f3bc02d9"),
                             Descricao = "Portuguesa ",
                             Valor = 45m
                         },
                         new
                         {
-                            Id = new Guid("3231493d-51be-4b95-b94d-de454b2d1d63"),
+                            Id = new Guid("11895cec-1106-400f-a1c6-d1077e21fb1e"),
                             Descricao = "Veggie ",
                             Valor = 59.99m
                         });
@@ -226,7 +223,7 @@ namespace MrPizza.Domain.Infra.Migrations
                     b.HasKey("Id")
                         .HasName("PK_usuarioId");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("MrPizza.Domain.Entities.Endereco", b =>
@@ -238,9 +235,9 @@ namespace MrPizza.Domain.Infra.Migrations
 
             modelBuilder.Entity("MrPizza.Domain.Entities.Pedido", b =>
                 {
-                    b.HasOne("MrPizza.Domain.Entities.Usuario", null)
+                    b.HasOne("MrPizza.Domain.Entities.Usuario", "Usuario")
                         .WithMany("Pedidos")
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("IdUsuario");
                 });
 
             modelBuilder.Entity("MrPizza.Domain.Entities.Pizza", b =>

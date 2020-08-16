@@ -16,9 +16,10 @@ namespace MrPizza.Domain.Entities
             DataHoraPedido = dataHoraPedido;
         }
 
-        public List<Pizza> Pizzas { get; set; }
-        public Guid? IdUsuario { get; set; }
-        public Guid? IdEndereco { get; set; }
-        public DateTime DataHoraPedido { get; set; }
+        public List<Pizza> Pizzas { get; }
+        public Guid? IdUsuario { get; }
+        public Usuario Usuario { get; }
+        public Guid? IdEndereco { get; }
+        public DateTime DataHoraPedido { get; }
     }
 }

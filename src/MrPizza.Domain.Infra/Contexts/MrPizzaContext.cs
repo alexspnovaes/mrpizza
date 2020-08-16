@@ -27,15 +27,22 @@ namespace MrPizza.Domain.Infra.Contexts
 
             modelBuilder.Entity<Pedido>(entity =>
             {
+                entity.HasOne(e => e.Usuario)
+                    .WithMany(c => c.Pedidos)
+                    .HasForeignKey(e => e.IdUsuario);
                 entity.HasMany(e => e.Pizzas)
                     .WithOne(e => e.Pedido);
                 entity.HasKey(e => e.Id).HasName("PK_pedidoId");
                 entity.Property(e => e.IdEndereco);
                 entity.Property(e => e.IdUsuario);
+                entity.Property(e => e.DataHoraPedido);
             });
 
             modelBuilder.Entity<Usuario>(entity =>
             {
+                entity.HasMany(e => e.Pedidos)
+                    .WithOne(e => e.Usuario)
+                    .HasForeignKey(e => e.IdUsuario);
                 entity.HasMany(e => e.Enderecos)
                     .WithOne(e => e.Usuario)
                     .HasForeignKey(e => e.IdUsuario);
@@ -55,6 +62,9 @@ namespace MrPizza.Domain.Infra.Contexts
 
             modelBuilder.Entity<Endereco>(entity =>
             {
+                entity.HasOne(e => e.Usuario)
+                   .WithMany(c => c.Enderecos)
+                   .HasForeignKey(e => e.IdUsuario);
                 entity.HasKey(e => e.Id).HasName("PK_enderecoId");
                 entity.Property(e => e.Bairro).IsRequired().HasColumnType("varchar(100)");
                 entity.Property(e => e.Cep).IsRequired().HasColumnType("varchar(8)");

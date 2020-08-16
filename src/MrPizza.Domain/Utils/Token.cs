@@ -20,7 +20,7 @@ namespace MrPizza.Domain.Utils
                     new Claim(ClaimTypes.Name, login)
                 }),
                 Issuer = "self",
-                Expires = DateTime.UtcNow.AddSeconds(60),
+                Expires = DateTime.UtcNow.AddSeconds(900),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature)

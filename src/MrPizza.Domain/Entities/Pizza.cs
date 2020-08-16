@@ -17,8 +17,8 @@ namespace MrPizza.Domain.Entities
             Valor = valor;
         }
 
-        public Pedido Pedido { get; set; }
+        public Pedido Pedido { get; }
         public List<PizzaSabor> PizzaSabores { get; set; }
-        public decimal Valor { get; set; }
+        public decimal Valor { get; }
     }
 }

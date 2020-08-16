@@ -10,5 +10,6 @@ namespace MrPizza.Domain.Interfaces.Repositories
     {
         Task<Usuario> Get(string login, string senha);
         Task<Usuario> Get(string login);
+        Task<Usuario> GetUserPedidos(Guid id);
     }
 }

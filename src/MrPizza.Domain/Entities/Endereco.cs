@@ -19,14 +19,14 @@ namespace MrPizza.Domain.Entities
             Estado = estado;
         }
 
-        public string Rua { get; set; }
-        public string Numero { get; set; }
-        public string Complemento { get; set; }
-        public string Bairro { get; set; }
-        public string Cep { get; set; }
-        public string Cidade { get; set; }
-        public string Estado { get; set; }
-        public Usuario Usuario { get; set; }
-        public Guid? IdUsuario { get; set; }
+        public string Rua { get; }
+        public string Numero { get; }
+        public string Complemento { get; }
+        public string Bairro { get; }
+        public string Cep { get; }
+        public string Cidade { get; }
+        public string Estado { get; }
+        public Usuario Usuario { get; }
+        public Guid? IdUsuario { get; }
     }
 }
