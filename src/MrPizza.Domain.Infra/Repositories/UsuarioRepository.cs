@@ -19,6 +19,11 @@ namespace MrPizza.Domain.Infra.Repositories
             return await _context.Usuario.FirstOrDefaultAsync(u => u.EmailLogin == login && u.Senha == senha);
         }
 
-       
+        public async Task<Usuario> Get(string login)
+        {
+            return await _context.Usuario.FirstOrDefaultAsync(u => u.EmailLogin == login);
+        }
+
+
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MrPizza.Domain.Commands.Pedido;
 using MrPizza.Domain.Commands.Usuario;
+using MrPizza.Domain.Models.Inputs;
 
 namespace MrPizza.Api.Controllers
 {
@@ -21,19 +22,19 @@ namespace MrPizza.Api.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Post([FromBody] NewUsuarioCommand command)
+        public async Task<IActionResult> Post([FromBody] UsuarioInput input)
         {
             try
             {
                 var result = await _mediator.Send(
                 new NewUsuarioCommand(
-                    command.Nome,
-                    command.Login,
-                    command.Senha,
-                    command.ConfirmarSenha,
-                    command.Enderecos,
-                    command.DDD,
-                    command.Telefone)
+                    input.Nome,
+                    input.Login,
+                    input.Senha,
+                    input.ConfirmarSenha,
+                    input.Enderecos,
+                    input.DDD,
+                    input.Telefone)
                 );
                 if (result.Ok)
                     return Ok();

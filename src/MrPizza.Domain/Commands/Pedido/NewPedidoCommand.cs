@@ -8,7 +8,7 @@ namespace MrPizza.Domain.Commands.Pedido
 {
     public class NewPedidoCommand : IRequest<GenericCommandResult>
     {
-        public NewPedidoCommand(List<PizzaSaborModel> pizzas, Guid? idUsuario, Endereco endereco)
+        public NewPedidoCommand(List<PizzaSaborModel> pizzas, Guid? idUsuario, EnderecoModel endereco)
         {
             Pizzas = pizzas;
             IdUsuario = idUsuario;
@@ -17,6 +17,6 @@ namespace MrPizza.Domain.Commands.Pedido
 
         public List<PizzaSaborModel> Pizzas { get; set; }
         public Guid? IdUsuario { get; set; }
-        public Endereco Endereco { get; set; }
+        public EnderecoModel Endereco { get; set; }
     }
 }
