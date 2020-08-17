@@ -42,8 +42,8 @@ namespace MrPizza.Domain.Handlers.NewPedidoHandler
             {
                 var validatorEndereco = new EnderecoModelValidation();
                 var resultEndereco = validatorEndereco.Validate(request.Endereco);
-                if (!results.IsValid)
-                    return GenericCommandResult.Failure(results.Errors);
+                if (!resultEndereco.IsValid)
+                    return GenericCommandResult.Failure(resultEndereco.Errors);
 
                 var endereco = new Endereco(request.Endereco.Rua, request.Endereco.Numero, request.Endereco.Complemento, request.Endereco.Bairro, request.Endereco.Cep, request.Endereco.Cidade, request.Endereco.Estado);
                 await _enderecoRepository.Create(endereco);
